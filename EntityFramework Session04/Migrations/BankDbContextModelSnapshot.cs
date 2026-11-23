@@ -75,6 +75,29 @@ namespace EntityFramework_Session04.Migrations
                     b.HasKey("Code");
 
                     b.ToTable("Branches", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Code = "CAI-01",
+                            Address = "12 Tahrir Square, Cairo",
+                            Name = "Cairo Main Branch",
+                            PhoneNumber = "0225550101"
+                        },
+                        new
+                        {
+                            Code = "ALX-01",
+                            Address = "45 Corniche Road, Alexandria",
+                            Name = "Alexandria Branch",
+                            PhoneNumber = "0345550202"
+                        },
+                        new
+                        {
+                            Code = "GIZ-01",
+                            Address = "7 Pyramids Street, Giza",
+                            Name = "Giza Branch",
+                            PhoneNumber = "0235550303"
+                        });
                 });
 
             modelBuilder.Entity("EntityFramework_Session04.Models.Customer", b =>
@@ -195,6 +218,35 @@ namespace EntityFramework_Session04.Migrations
                         .IsUnique();
 
                     b.ToTable("Managers", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            BranchCode = "CAI-01",
+                            Email = "khaled.mansour@nationalbank.com",
+                            FullName = "Khaled Mansour",
+                            HireDate = new DateOnly(2015, 3, 1),
+                            PhoneNumber = "01011111111"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            BranchCode = "ALX-01",
+                            Email = "salma.hassan@nationalbank.com",
+                            FullName = "Salma Hassan",
+                            HireDate = new DateOnly(2018, 7, 15),
+                            PhoneNumber = "01022222222"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            BranchCode = "GIZ-01",
+                            Email = "omar.fathy@nationalbank.com",
+                            FullName = "Omar Fathy",
+                            HireDate = new DateOnly(2020, 1, 10),
+                            PhoneNumber = "01033333333"
+                        });
                 });
 
             modelBuilder.Entity("EntityFramework_Session04.Models.Transaction", b =>

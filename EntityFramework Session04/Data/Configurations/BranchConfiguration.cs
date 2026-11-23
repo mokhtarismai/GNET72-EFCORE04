@@ -27,5 +27,12 @@ public class BranchConfiguration : IEntityTypeConfiguration<Branch>
                .WithOne(a => a.Branch)
                .HasForeignKey(a => a.BranchCode)
                .OnDelete(DeleteBehavior.Restrict);
+
+        
+        builder.HasData(
+            new Branch { Code = "CAI-01", Name = "Cairo Main Branch", Address = "12 Tahrir Square, Cairo", PhoneNumber = "0225550101" },
+            new Branch { Code = "ALX-01", Name = "Alexandria Branch", Address = "45 Corniche Road, Alexandria", PhoneNumber = "0345550202" },
+            new Branch { Code = "GIZ-01", Name = "Giza Branch", Address = "7 Pyramids Street, Giza", PhoneNumber = "0235550303" }
+        );
     }
 }
